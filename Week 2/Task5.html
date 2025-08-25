@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cities</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #4c1d95, #0f172a);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .cities-container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .cities-list {
+      counter-reset: city-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    .city-item {
+      counter-increment: city-counter;
+      position: relative;
+      padding: 16px 24px 16px 60px;
+      margin: 12px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .city-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #818cf8;
+      transform: translateX(5px);
+    }
+
+    .city-item::before {
+      content: counter(city-counter);
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #818cf8;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="cities-container">
+    <h1>🌍 World Cities</h1>
+    <ul class="cities-list">
+      <li class="city-item">Tokyo</li>
+      <li class="city-item">New York</li>
+      <li class="city-item">London</li>
+      <li class="city-item">Paris</li>
+      <li class="city-item">Sydney</li>
+    </ul>
+  </div>
+</body>
+</html>

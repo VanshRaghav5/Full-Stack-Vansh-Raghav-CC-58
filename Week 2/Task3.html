@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Us - Learn more about our team and mission">
+    <title>About Us - Our Story and Team</title>
+    <style>
+        /* Element Selectors with different color formats */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* HEX format */
+            color: rgb(51, 51, 51); /* RGB format */
+        }
+        
+        header {
+            background: linear-gradient(135deg, hsl(210, 100%, 25%), hsl(210, 100%, 35%)); /* HSL format */
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* RGBA format */
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* RGBA format */
+        }
+        
+        h2 {
+            color: #2c3e50; /* HEX format */
+            border-left: 5px solid hsl(195, 100%, 50%); /* HSL format */
+            padding-left: 1rem;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        /* Class Selectors */
+        .hero-section {
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1)); /* RGBA format */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* RGBA format */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .highlight-box {
+            background: hsl(48, 100%, 95%); /* HSL format */
+            border: 2px solid #f39c12; /* HEX format */
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgb(236, 240, 241); /* RGB format */
+            border-radius: 8px;
+            min-width: 120px;
+        }
+        
+        /* ID Selectors */
+        #mission-statement {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1)); /* RGBA format */
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 6px solid #27ae60; /* HEX format */
+            margin: 2rem 0;
+        }
+        
+        #company-values {
+            background: hsl(0, 0%, 98%); /* HSL format */
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgb(220, 221, 222); /* RGB format */
+        }
+        
+        #contact-cta {
+            background: linear-gradient(45deg, #e74c3c, #c0392b); /* HEX format */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        /* Attribute Selectors */
+        [data-role="ceo"] {
+            border: 3px solid #f39c12; /* HEX format */
+            background: rgba(243, 156, 18, 0.1); /* RGBA format */
+        }
+        
+        [data-department="engineering"] {
+            border-left: 4px solid hsl(195, 100%, 50%); /* HSL format */
+        }
+        
+        [data-department="design"] {
+            border-left: 4px solid rgb(155, 89, 182); /* RGB format */
+        }
+        
+        [data-years*="5"] {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1)); /* RGBA format */
+        }
+        
+        img[alt*="team"] {
+            border: 3px solid #3498db; /* HEX format */
+            border-radius: 50%;
+        }
+        
+        /* Pseudo-class Selectors */
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* RGBA format */
+        }
+        
+        .team-member:first-child {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(41, 128, 185, 0.05)); /* RGBA format */
+        }
+        
+        .team-member:last-child {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.05), rgba(142, 68, 173, 0.05)); /* RGBA format */
+        }
+        
+        .team-member:nth-child(even) {
+            background: hsl(0, 0%, 99%); /* HSL format */
+        }
+        
+        .stat-item:hover {
+            background: rgb(52, 152, 219); /* RGB format */
+            color: white;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        a:link {
+            color: #3498db; /* HEX format */
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: hsl(280, 50%, 50%); /* HSL format */
+        }
+        
+        a:hover {
+            color: rgb(231, 76, 60); /* RGB format */
+            text-decoration: underline;
+        }
+        
+        a:active {
+            color: rgba(231, 76, 60, 0.8); /* RGBA format */
+        }
+        
+        /* Pseudo-element Selectors */
+        .team-member::before {
+            content: "★";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #f39c12; /* HEX format */
+            font-size: 1.2rem;
+        }
+        
+        .team-member {
+            position: relative;
+        }
+        
+        .highlight-box::after {
+            content: "💡";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* RGBA format */
+        }
+        
+        .highlight-box {
+            position: relative;
+        }
+        
+        h2::first-letter {
+            font-size: 2em;
+            color: hsl(195, 100%, 40%); /* HSL format */
+            font-weight: bold;
+        }
+        
+        #mission-statement::before {
+            content: "🎯 ";
+            font-size: 1.5rem;
+        }
+        
+        .stat-item::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2ecc71); /* HEX format */
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        footer {
+            background: rgb(44, 62, 80); /* RGB format */
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Our Company</h1>
+        <p>Discover our story, meet our team, and learn about our mission</p>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Our Story</h2>
+            <p>
+                Founded in 2018, our company began as a small startup with a big vision: to create 
+                innovative solutions that make technology accessible to everyone. What started as a 
+                two-person team working from a garage has grown into a thriving organization of 
+                passionate professionals dedicated to excellence and innovation.
+            </p>
+            <p>
+                Over the years, we've helped hundreds of clients achieve their digital goals, 
+                from small businesses looking to establish their online presence to large 
+                enterprises seeking to modernize their technology infrastructure.
+            </p>
+        </section>
+
+        <section id="mission-statement">
+            <h2>Our Mission</h2>
+            <p>
+                To empower businesses and individuals through cutting-edge technology solutions 
+                that are both innovative and accessible. We believe that great technology should 
+                enhance human potential, not complicate it.
+            </p>
+        </section>
+
+        <section class="highlight-box">
+            <h2>Why Choose Us?</h2>
+            <p>
+                We combine technical expertise with creative problem-solving to deliver solutions 
+                that exceed expectations. Our commitment to quality, transparency, and customer 
+                satisfaction sets us apart in the industry.
+            </p>
+        </section>
+
+        <section>
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member" data-role="ceo" data-years="5+">
+                    <img src="/placeholder.svg?height=150&width=150" alt="team member CEO" width="150" height="150">
+                    <h3>Vansh Raghav</h3>
+                    <p><strong>Chief Executive Officer</strong></p>
+                    <p>Vansh leads our company with vision and passion, bringing over years of industry experience.</p>
+                </div>
+                
+                <div class="team-member" data-department="engineering" data-years="3+">
+                    <img src="/placeholder.svg?height=150&width=150" alt="team member engineer" width="150" height="150">
+                    <h3>Uday Bansal</h3>
+                    <p><strong>Lead Developer</strong></p>
+                    <p>Uday architets our technical solutions and ensures code quality across all projects.</p>
+                </div>
+                
+                <div class="team-member" data-department="design" data-years="4+">
+                    <img src="/placeholder.svg?height=150&width=150" alt="team member designer" width="150" height="150">
+                    <h3>Swayam Adhana</h3>
+                    <p><strong>Creative Director</strong></p>
+                    <p>Swayam brings creativity and user-centered design thinking to every project we undertake.</p>
+                </div>
+                
+                <div class="team-member" data-department="engineering" data-years="5+">
+                    <img src="/placeholder.svg?height=150&width=150" alt="team member manager" width="150" height="150">
+                    <h3>Parv Agrawal</h3>
+                    <p><strong>Project Manager</strong></p>
+                    <p>Parv ensures our projects are delivered on time and exceed client expectations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="company-values">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Innovation:</strong> We constantly push boundaries and explore new possibilities</li>
+                <li><strong>Quality:</strong> We never compromise on the quality of our work</li>
+                <li><strong>Collaboration:</strong> We believe great things happen when people work together</li>
+                <li><strong>Integrity:</strong> We conduct business with honesty and transparency</li>
+                <li><strong>Growth:</strong> We invest in our team's professional development</li>
+            </ul>
+        </section>
+
+        <section id="contact-cta">
+            <h2>Ready to Work With Us?</h2>
+            <p>Let's discuss how we can help bring your vision to life.</p>
+            <p><a href="vanshraghav81@gmail.com" style="color: white; font-weight: bold;">Get in Touch</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Our Company. All rights reserved.</p>
+        <p>
+            <a href="#" style="color: #3498db;">Privacy Policy</a> | 
+            <a href="#" style="color: #3498db;">Terms of Service</a> | 
+            <a href="#" style="color: #3498db;">Contact Us</a>
+        </p>
+    </footer>
+</body>
+</html>

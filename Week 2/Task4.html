@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Movie Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: all 0.2s ease-in-out;
+    }
+    li:hover {
+      background: #f1f1f1;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .favorite {
+      background: linear-gradient(to right, #fff8e1, #fff3cd);
+      border: 1px solid #f0c36d;
+      box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+    }
+    .favorite h3 {
+      color: #8a6d3b;
+    }
+    .favorite p {
+      color: #a88734;
+    }
+    .favorite-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #d39e00;
+    }
+    .favorite-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Movie Collection</h1>
+  <ul>
+    <li>
+      <h3>The Shawshank Redemption</h3>
+      <p>1994</p>
+    </li>
+    <li class="favorite">
+      <h3>The Godfather</h3>
+      <p>1972</p>
+      <div class="favorite-badge">
+        <!-- Star Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 .587l3.668 7.571L24 9.423l-6 5.849 1.416 8.268L12 18.896 4.584 23.54 6 15.272 0 9.423l8.332-1.265z"/>
+        </svg>
+        Favorite
+      </div>
+    </li>
+    <li>
+      <h3>The Dark Knight</h3>
+      <p>2008</p>
+    </li>
+    <li>
+      <h3>Pulp Fiction</h3>
+      <p>1994</p>
+    </li>
+    <li>
+      <h3>Forrest Gump</h3>
+      <p>1994</p>
+    </li>
+    <li>
+      <h3>Inception</h3>
+      <p>2010</p>
+    </li>
+    <li>
+      <h3>The Matrix</h3>
+      <p>1999</p>
+    </li>
+    <li>
+      <h3>Goodfellas</h3>
+      <p>1990</p>
+    </li>
+  </ul>
+</body>
+</html>
