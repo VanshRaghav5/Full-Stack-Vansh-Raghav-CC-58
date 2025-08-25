@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Timetable - Computer Engineering & Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .university-info {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        caption {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: white;
+            margin: 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        thead th {
+            background-color: #34495e;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .subject-cell {
+            background-color: #27ae60;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .empty-cell {
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+        }
+        
+        .time-header {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .day-header {
+            background-color: #e74c3c;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 15px;
+        }
+        
+        tfoot td {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+        }
+        
+        .subject-code {
+            font-size: 0.8em;
+            display: block;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GLA UNIVERSITY, MATHURA</h1>
+        <div class="university-info">
+            <h2>Institute of Engineering & Technology</h2>
+            <h3>Computer Engineering & Applications</h3>
+            <p><strong>Course:</strong> Bachelor of Technology | <strong>Session:</strong> 2025-2026</p>
+            <p><strong>Section:</strong> 3CC(AIML)(63) | <strong>Semester:</strong> III | <strong>Class Advisor:</strong> Mr. Preshit Mangesh Desai</p>
+            <p><strong>w.e.f:</strong> 19/Aug/2025</p>
+        </div>
+    </div>
+
+    <table>
+        <caption>Time Table: Odd Semester Programme</caption>
+        
+        <thead>
+            <tr>
+                <th rowspan="2">Day/Time</th>
+                <th>Lecture #</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+            </tr>
+            <tr class="time-header">
+                <th>Time Slot</th>
+                <th>08:00-09:00</th>
+                <th>09:00-10:00</th>
+                <th>10:00-11:00</th>
+                <th>11:00-12:00</th>
+                <th>12:00-01:00</th>
+                <th>01:00-02:00</th>
+                <th>02:00-03:00</th>
+                <th>03:00-04:00</th>
+                <th>04:00-05:00</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td class="day-header">Monday</td>
+                <td class="subject-cell">
+                    BCSE1251
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSE0712
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSE0704
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    POPH 0001
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="subject-cell">
+                    BCSC1012
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+            
+            <tr>
+                <td class="day-header">Tuesday</td>
+                <td class="subject-cell">
+                    BCSE0281
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSC1012
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSE1251
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="subject-cell">
+                    3CC1/BCSE0742
+                    <span class="subject-code">ABVII-7023</span>
+                    <br>
+                    3CC2/BCSE0742
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+            
+            <tr>
+                <td class="day-header">Wednesday</td>
+                <td class="subject-cell">
+                    BCSE0712
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSE1251
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    POPH 0001
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="subject-cell">
+                    POPH 0001
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSC1012
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+            
+            <tr>
+                <td class="day-header">Thursday</td>
+                <td class="subject-cell">
+                    3CC1/BCSE0742
+                    <span class="subject-code">ABVII-7023</span>
+                    <br>
+                    3CC2/BCSE0742
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+            
+            <tr>
+                <td class="day-header">Friday</td>
+                <td class="subject-cell">
+                    POPH 0001
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    BCSE0704
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    3CC1/BCSC3007
+                    <span class="subject-code">ABVII-7023</span>
+                    <br>
+                    3CC2/BCSC3007
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="subject-cell">
+                    3CC1/BCSE0734
+                    <span class="subject-code">ABVII-7023</span>
+                    <br>
+                    3CC2/BCSE0734
+                    <span class="subject-code">ABVII-7023</span>
+                </td>
+                <td class="subject-cell">
+                    POPH 0002
+                    <span class="subject-code">ABI-413</span>
+                    <span class="subject-code">(3CC-3CD)</span>
+                </td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+            
+            <tr>
+                <td class="day-header">Saturday</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+                <td class="empty-cell">-</td>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td colspan="5"><strong>Total Classes per Week:</strong> 18 lectures</td>
+                <td colspan="5"><strong>Remarks:</strong> Lab sessions scheduled in blocks</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
