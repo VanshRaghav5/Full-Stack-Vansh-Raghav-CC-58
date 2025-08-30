@@ -1,0 +1,200 @@
+<!-- Week 3: Layouts — Sidebar, Box Model & Flexbox
+ Objective: Explore layout techniques, box model, and responsive design.
+Scenario: Build UI components for blogs and e-commerce.
+
+Tasks:
+
+Create a sidebar using <div> and CSS.
+
+Ensure it is responsive.
+
+Design a product card with image, description, and buy button.
+
+Apply margin, padding, border, box-shadow.
+
+Output: Responsive e-commerce product card.
+
+Build a blog layout with 3-column Flexbox.
+
+Add media queries for mobile.
+
+Output: Responsive blog.
+
+Week 4: Animations & Bootstrap Basics -->
+
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .sidebar{
+                margin: 0;
+                padding: 0;
+                width: 150px;
+                background-color: #f1f1f1;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+            }
+            .sidebar a{
+                display: block;
+                color: black;
+                padding: 16px;
+                text-decoration: none;
+            }
+            .sidebar a.active{
+                background-color: #c64a08;
+                color: white;
+            }
+            .sidebar a:hover:not(.active){
+                background-color: #555;
+                color: white;
+            }
+            div.content{
+                margin-left: 160px;
+                padding: 1px 16px;
+                height: 1000px;
+            }
+            @media screen and (max-width: 900px){
+                .sidebar{
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                }
+                .sidebar a{
+                    float: left;
+                }
+                div.content{
+                    margin-left: 0;
+                }
+                .card{
+                    flex: 1 1 calc(45% - 20px);
+                }
+            }
+            @media screen and (max-width: 400px){
+                .sidebar a{
+                    text-align: center;
+                    float: none;
+                }
+                .card{
+                    flex: 1 1 100%;
+                }
+            }
+             .card{
+                flex: 1 1 calc(23% - 20px);
+                margin:10px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                text-align: center;
+                font-family: arial,sans-serif;
+                background-color: white;
+                max-width: 250px;
+                height: auto;
+                border-radius: 8px;
+                overflow: hidden;
+                padding-bottom: 10px;
+            }
+            .card img{
+                width: 100%;
+                height: 120px;
+                object-fit: cover;
+            }
+            .h1{
+                font-size: 16px;
+                margin: 8px 0;
+            }
+            .card .price{
+                color: grey;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .card p{
+                font-size: 12px;
+                padding: 0 6px;
+                margin: 5px 0;
+            }
+            .card button{
+                border: none;
+                outline: 0;
+                padding: 6px;
+                color: rgb(0, 0, 0);
+                background-color: #fefbfa;
+                text-align: center;
+                cursor: pointer;
+                width: 70%;
+                font-size: 14px;
+                border-radius: 5px;
+                margin: 4px 0;
+            }
+            .price{
+                color: grey;
+                font-size: 22px;
+            }
+               .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: #f1f1f1;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .flex-container > div {
+                background-color: #4CAF50;
+                color: white;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                text-align: center;
+                flex: 1 1 100px; /* Grow, shrink, basis */
+            }
+        </style>
+        <body>
+            <div class="sidebar">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="content">
+                <h2 style="text-align:center">Product Card</h2>
+                <div class="flex-container">
+            <div class="card">
+                <img src="pexels-alexazabache-3907507.jpg" alt="Product Image" style="width:100%">
+                <h1>Product Name</h1>
+                <p class="price">$2499</p>
+                <p>Text related to the product</p>
+                <p><button>Add to Cart</button></p>
+                <p><button>Buy Now</button></p>
+            </div>
+            <div class="card">
+                <img src="pexels-alexazabache-3907507.jpg" alt="Product Image" style="width:100%">
+                <h1>Product Name</h1>
+                <p class="price">$2499</p>
+                <p>Text related to the product</p>
+                <p><button>Add to Cart</button></p>
+                <p><button>Buy Now</button></p>
+            </div>
+            <div class="card">
+                <img src="pexels-alexazabache-3907507.jpg" alt="Product Image" style="width:100%">
+                <h1>Product Name</h1>
+                <p class="price">$2499</p>
+                <p>Text related to the product</p>
+                <p><button>Add to Cart</button></p>
+                <p><button>Buy Now</button></p>
+            </div>
+            <div class="card">
+                <img src="pexels-alexazabache-3907507.jpg" alt="Product Image" style="width:100%">
+                <h1>Product Name</h1>
+                <p class="price">$2499</p>
+                <p>Text related to the product</p>
+                <p><button>Add to Cart</button></p>
+                <p><button>Buy Now</button></p>
+            </div>
+            </div>
+            </div>
+             
+
+        </body>
+    </head>
+</html>

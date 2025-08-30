@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Product Card</title>
+  <style>
+    :root {
+      /* Color system (5 total): 1 brand, 3 neutrals, 1 accent */
+      --brand: #0ea5e9;    /* primary blue */
+      --text: #111827;     /* near-black text */
+      --bg: #ffffff;       /* white background */
+      --border: #e5e7eb;   /* light gray border */
+      --accent: #f59e0b;   /* amber for price */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 16px;
+    }
+
+    .product-card {
+      /* Required: margin, padding, border, box-shadow */
+      margin: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+      box-shadow: 0 6px 16px rgba(17, 24, 39, 0.08); /* based on --text */
+      max-width: 360px;
+      width: 100%;
+      transition: box-shadow 150ms ease, transform 150ms ease;
+    }
+
+    .product-card:hover {
+      /* subtle lift without introducing a new color */
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
+    }
+
+    .product-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-body {
+      margin-top: 12px;
+    }
+
+    .product-title {
+      margin: 0 0 6px;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    .product-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      opacity: 0.9;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(14, 165, 233, 0.32); /* based on --brand */
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.38);
+    }
+
+    .buy-btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    /* Responsive tweaks for slightly larger screens */
+    @media (min-width: 480px) {
+      .product-card { padding: 20px; }
+      .product-title { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="product-card" role="region" aria-label="Product card: Wireless Headphones">
+      <div class="product-image">
+        <img
+          src="/placeholder.svg?height=240&width=360"
+          alt="Modern wireless headphones in matte black"
+        />
+      </div>
+
+      <div class="product-body">
+        <h2 class="product-title text-pretty">Wireless Headphones</h2>
+        <p class="product-desc">
+          Crisp audio, 30-hour battery, fast charge, and soft over-ear cushions for all‑day comfort.
+        </p>
+
+        <div class="product-meta">
+          <span class="product-price" aria-label="Price">$129.00</span>
+          <button class="buy-btn" type="button" aria-label="Buy Wireless Headphones">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

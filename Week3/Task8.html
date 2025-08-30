@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Responsive Blog</title>
+    <style>
+      /* Color system (5 total):
+         --color-primary: blue (#2563eb)
+         --color-bg: white (#ffffff)
+         --color-text: gray-900 (#111827)
+         --color-muted: gray-600 (#6b7280)
+         --color-border: gray-200 (#e5e7eb)
+      */
+      :root {
+        --color-primary: #2563eb;
+        --color-bg: #ffffff;
+        --color-text: #111827;
+        --color-muted: #6b7280;
+        --color-border: #e5e7eb;
+      }
+
+      /* Base */
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+
+      /* Layout wrappers */
+      .container {
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: 16px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-bg);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: saturate(180%) blur(8px);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 8px;
+        text-decoration: none;
+        color: inherit;
+      }
+      .brand h1 {
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .brand small {
+        color: var(--color-muted);
+        font-size: 0.875rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 12px;
+      }
+      nav a {
+        color: var(--color-text);
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+      }
+      nav a:hover {
+        border-color: var(--color-border);
+      }
+      nav a:focus-visible {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+
+      .hero {
+        padding-block: 24px;
+      }
+      .hero h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin: 0 0 8px;
+        letter-spacing: -0.015em;
+      }
+      .hero p {
+        margin: 0;
+        color: var(--color-muted);
+      }
+
+      /* Posts: 3-column Flexbox grid */
+      .posts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: stretch;
+      }
+      .post {
+        /* 3 columns on large screens */
+        flex: 1 1 calc(33.333% - 16px);
+        min-width: 260px; /* prevents cards becoming too narrow on very wide screens */
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--color-bg);
+        display: flex;
+        flex-direction: column;
+        transition: transform 120ms ease, box-shadow 120ms ease;
+      }
+      .post:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      }
+      .thumb {
+        aspect-ratio: 16 / 9;
+        background: var(--color-border);
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1 1 auto;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        color: var(--color-muted);
+        font-size: 0.875rem;
+      }
+      .title {
+        margin: 0;
+        font-size: 1.125rem;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+      }
+      .excerpt {
+        margin: 0;
+        color: var(--color-text);
+      }
+      .actions {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .read-more {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .read-more:hover {
+        background: var(--color-primary);
+        color: var(--color-bg);
+      }
+      .read-more:focus-visible {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+
+      footer {
+        margin-top: 40px;
+        border-top: 1px solid var(--color-border);
+        padding-block: 20px;
+        color: var(--color-muted);
+        font-size: 0.875rem;
+      }
+
+      /* Responsiveness */
+      /* 2 columns on tablets */
+      @media (max-width: 1024px) {
+        .post {
+          flex: 1 1 calc(50% - 12px);
+        }
+      }
+      /* 1 column on mobile */
+      @media (max-width: 640px) {
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        nav {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+        .posts {
+          gap: 16px;
+        }
+        .post {
+          flex: 1 1 100%;
+        }
+        .hero h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Home">
+          <h1>Responsive Blog</h1>
+          <small>Thoughts, stories, ideas</small>
+        </a>
+        <nav aria-label="Primary">
+          <a href="#">Home</a>
+          <a href="#">Topics</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" role="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h2 id="hero-title">Latest Articles</h2>
+        <p>Discover fresh insights across design, development, and product thinking.</p>
+      </section>
+
+      <section class="posts" aria-label="Articles">
+         Post card 1 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Design</span>
+              <span>•</span>
+              <time datetime="2025-08-15">Aug 15, 2025</time>
+              <span>•</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="title">Designing with Accessibility in Mind</h3>
+            <p class="excerpt">Building inclusive experiences starts with color, contrast, and clear semantics. Here’s a checklist to keep your UI accessible.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+
+         Post card 2 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Development</span>
+              <span>•</span>
+              <time datetime="2025-08-10">Aug 10, 2025</time>
+              <span>•</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="title">Modern CSS Layouts with Flexbox</h3>
+            <p class="excerpt">Flexbox simplifies vertical alignment, equal-height columns, and responsive designs without complex hacks.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+
+         Post card 3 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Product</span>
+              <span>•</span>
+              <time datetime="2025-08-02">Aug 2, 2025</time>
+              <span>•</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="title">Shaping Roadmaps Users Love</h3>
+            <p class="excerpt">Prioritize outcomes over output. This approach keeps teams aligned and customers delighted.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+
+         Post card 4 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Design</span>
+              <span>•</span>
+              <time datetime="2025-07-24">Jul 24, 2025</time>
+              <span>•</span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="title">Typography Systems that Scale</h3>
+            <p class="excerpt">Define consistent type ramps, line-heights, and letter-spacing to craft a cohesive reading experience.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+
+         Post card 5 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Development</span>
+              <span>•</span>
+              <time datetime="2025-07-18">Jul 18, 2025</time>
+              <span>•</span>
+              <span>9 min read</span>
+            </div>
+            <h3 class="title">Ship Faster with Clean Components</h3>
+            <p class="excerpt">Small, focused components improve reuse, testability, and reduce cognitive load across your codebase.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+
+         Post card 6 
+        <article class="post">
+          <div class="thumb" role="img" aria-label="Article thumbnail placeholder"></div>
+          <div class="content">
+            <div class="meta">
+              <span>Product</span>
+              <span>•</span>
+              <time datetime="2025-07-05">Jul 5, 2025</time>
+              <span>•</span>
+              <span>4 min read</span>
+            </div>
+            <h3 class="title">The Power of Saying No</h3>
+            <p class="excerpt">Focus is a force multiplier. Learn how to say no without eroding relationships or momentum.</p>
+            <div class="actions">
+              <a class="read-more" href="#">Read more</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2025 Responsive Blog — Built with semantic HTML and Flexbox
+      </div>
+    </footer>
+  </body>
+</html>
