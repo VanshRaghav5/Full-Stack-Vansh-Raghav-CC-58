@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Crypto Price Tracker</title>
+  <link rel="stylesheet" href="ass2.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>📈 Real-Time Crypto Price Tracker</h1>
+
+    <div class="card">
+      <h2 id="coinName">Bitcoin (BTC)</h2>
+      <p class="price" id="price">₹0</p>
+      <p class="change" id="change">--</p>
+    </div>
+
+    <canvas id="priceChart"></canvas>
+
+    <button id="refreshBtn">Refresh Now</button>
+  </div>
+
+  <script src="ass2.js"></script>
+</body>
+</html>
