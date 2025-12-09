@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Pattern Generator</title>
+  <link rel="stylesheet" href="ass1.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Number Pattern Generator</h1>
+      <p class="subtitle">Triangles, Pyramids & Diamonds — rendered dynamically with JS</p>
+    </header>
+
+    <section class="controls">
+      <label>
+        Pattern
+        <select id="patternSelect" aria-label="Select pattern">
+          <option value="right">Right Triangle</option>
+          <option value="pyramid">Pyramid</option>
+          <option value="diamond">Diamond</option>
+        </select>
+      </label>
+
+      <label>
+        Rows
+        <input id="rowsInput" type="number" min="1" value="5" aria-label="Number of rows">
+      </label>
+
+      <label class="checkbox">
+        <input id="useNumbers" type="checkbox" />
+        Use numbers instead of stars
+      </label>
+
+      <label class="checkbox">
+        <input id="colorToggle" type="checkbox" checked />
+        Alternate row colors
+      </label>
+
+      <div class="buttons">
+        <button id="generateBtn">Generate</button>
+        <button id="clearBtn" class="muted">Clear</button>
+      </div>
+    </section>
+
+    <section class="output">
+      <div id="note" class="note" aria-live="polite"></div>
+      <pre id="patternArea" class="pattern" tabindex="0" aria-label="Pattern output"></pre>
+    </section>
+
+    <footer>
+      <small>Built with nested loops, string padding, and CSS transitions.</small>
+    </footer>
+  </main>
+
+  <script src="ass1.js"></script>
+</body>
+</html>

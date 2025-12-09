@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>InnovateX Solutions - About Us</title>
+  <style>
+    /* ===== Element Selector ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f8; /* HEX */
+      margin: 0;
+      padding: 0;
+      color: rgb(33, 37, 41); /* RGB */
+    }
+    /* ===== Class selector ===== */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* ===== ID selector ===== */
+    #header {
+      background-color: rgba(30, 144, 255, 0.85); /* RGBA */
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    /* ===== Attribute selector ===== */
+    a[target="_blank"] {
+      color: hsl(202, 85%, 50%); /* HSL */
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a[target="_blank"]:hover {
+      text-decoration: underline;
+    }
+    /* ===== Pseudo-class selector ===== */
+    nav ul li:hover {
+      background-color: hsl(210, 100%, 90%);
+      cursor: pointer;
+    }
+    /* Navigation styles */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+      background: #0077cc;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+      padding: 10px 0;
+      flex: 1;
+      color: white;
+      font-weight: bold;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+    /* ===== Pseudo-element selector ===== */
+    p::first-letter {
+      font-size: 200%;
+      font-weight: bold;
+      color: #0077cc;
+    }
+    /* Section Titles */
+    h2.section-title {
+      color: #00509E;
+      border-bottom: 3px solid #00A3FF; 
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+    /* About Us */
+    #about p {
+      line-height: 1.6;
+    }
+    /* Team */
+    #team .member {
+      background-color: #e7f1ff;
+      margin: 10px 0;
+      padding: 15px;
+      border-left: 6px solid #00509E;
+    }
+    #team .member h3 {
+      margin: 0 0 5px 0;
+    }
+    /* ===== 4. Unordered list of movies ===== */
+    ul.movies {
+      list-style-type: square;
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    ul.movies li {
+      margin: 5px 0;
+      font-size: 1.1em;
+    }
+    /* Favorite Movie Unique Style */
+    ul.movies li.favourite {
+      color: #FF4500;
+      font-weight: bold;
+      background: rgba(255, 69, 0, 0.1);
+      padding-left: 10px;
+      border-left: 4px solid #FF4500;
+    }
+    /* ===== 5. Ordered list of cities with random styles ===== */
+    ol.cities {
+      counter-reset: city-counter;
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+    ol.cities li {
+      margin: 10px 0;
+      padding: 5px;
+      position: relative;
+    }
+    /* Random styling used via nth-child */
+    ol.cities li:nth-child(1) {
+      color: hsl(250, 60%, 40%);
+      font-size: 1.2em;
+    }
+    ol.cities li:nth-child(2) {
+      background-color: rgba(0, 150, 136, 0.1);
+      border-radius: 5px;
+      padding-left: 10px;
+    }
+    ol.cities li:nth-child(3) {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    ol.cities li:nth-child(4) {
+      font-style: italic;
+      color: hsl(30, 90%, 45%);
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    InnovateX Solutions
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#movies">Favorite Movies</a></li>
+      <li><a href="#cities">Cities We Serve</a></li>
+      <li><a href="https://innovatex.com" target="_blank">Official Site</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p>
+        InnovateX Solutions specializes in delivering custom technology solutions that empower businesses 
+        to thrive in a rapidly changing world.
+      </p>
+      <p>
+        Our dedicated team focuses on software innovation, cloud migrations, and data analytics to assure measurable success.
+      </p>
+    </section>
+
+    <section id="team">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="member">
+        <h3>Jane Lee</h3>
+        <p>Chief Executive Officer</p>
+        <p>Email: jane@innovatex.com</p>
+      </div>
+      <div class="member">
+        <h3>Arjun Patel</h3>
+        <p>Chief Technology Officer</p>
+        <p>Email: arjun@innovatex.com</p>
+      </div>
+      <div class="member">
+        <h3>Sofia Torres</h3>
+        <p>Head of Design</p>
+        <p>Email: sofia@innovatex.com</p>
+      </div>
+    </section>
+
+    <section id="movies">
+      <h2 class="section-title">Our Favorite Movies</h2>
+      <ul class="movies">
+        <li>Inception</li>
+        <li class="favourite">The Matrix</li> <!-- Favourite movie styled -->
+        <li>Interstellar</li>
+        <li>Shawshank Redemption</li>
+      </ul>
+    </section>
+
+    <section id="cities">
+      <h2 class="section-title">Cities We Serve</h2>
+      <ol class="cities">
+        <li>New York</li>
+        <li>Tokyo</li>
+        <li>Paris</li>
+        <li>Berlin</li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>

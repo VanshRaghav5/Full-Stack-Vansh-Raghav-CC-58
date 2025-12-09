@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Table</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #111;
+        color: #fff;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .pricing-table {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .plan {
+        background: #1c1c1c;
+        border-radius: 12px;
+        padding: 30px;
+        width: 280px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .plan h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .price {
+        font-size: 40px;
+        margin: 10px 0;
+        color: #00ffaa;
+      }
+
+      .features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .features li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: #111;
+        background: #00ffaa;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background: #00cc88;
+      }
+
+      /* Highlight Pro plan */
+      .plan.pro {
+        background: linear-gradient(160deg, #00ffaa15, #00ffaa30);
+        border: 2px solid #00ffaa;
+        transform: scale(1.05);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .pricing-table {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pricing-table">
+      <!-- Basic Plan -->
+      <div class="plan">
+        <h2>Basic</h2>
+        <div class="price">$9<span>/mo</span></div>
+        <ul class="features">
+          <li>✔ 5 Projects</li>
+          <li>✔ 10GB Storage</li>
+          <li>✔ Email Support</li>
+          <li>✖ Analytics</li>
+        </ul>
+        <a href="#" class="btn">Buy</a>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="plan pro">
+        <h2>Pro</h2>
+        <div class="price">$19<span>/mo</span></div>
+        <ul class="features">
+          <li>✔ 25 Projects</li>
+          <li>✔ 100GB Storage</li>
+          <li>✔ Priority Support</li>
+          <li>✔ Analytics</li>
+        </ul>
+        <a href="#" class="btn">Buy</a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="plan">
+        <h2>Premium</h2>
+        <div class="price">$39<span>/mo</span></div>
+        <ul class="features">
+          <li>✔ Unlimited Projects</li>
+          <li>✔ 1TB Storage</li>
+          <li>✔ 24/7 Support</li>
+          <li>✔ Advanced Analytics</li>
+        </ul>
+        <a href="#" class="btn">Buy</a>
+      </div>
+    </div>
+  </body>
+</html>

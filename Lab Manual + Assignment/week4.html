@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Startup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#000; color:#fff; }
+    .hero { height:100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; background:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; text-align:center; }
+    .footer { background:#111; color:#bbb; padding:20px 0; text-align:center; }
+    .nav-link { color:white !important; transition:all .3s ease-in-out; }
+    .nav-link:hover { background:#0d6efd; color:#fff !important; padding:10px 20px; border-radius:8px; transform:scale(1.1); }
+    .astronaut { position:absolute; width:120px; top:40%; left:10%; animation:floatAstronaut 6s ease-in-out infinite; }
+    .rocket { position:absolute; width:100px; bottom:-200px; left:70%; animation:launchRocket 8s ease-in-out infinite; }
+    @keyframes floatAstronaut { 0%{transform:translateY(0);} 50%{transform:translateY(-40px);} 100%{transform:translateY(0);} }
+    @keyframes launchRocket { 0%{bottom:-200px;} 50%{bottom:50%;transform:rotate(-5deg);} 100%{bottom:110%;} }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">🚀 Startup</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section with Animation -->
+<!-- Hero Section with Animation -->
+<div class="hero">
+  <h1>Welcome to Space Startup</h1>
+  <p>Innovating the Future of Space Exploration</p>
+  <a href="#services" class="btn btn-primary btn-lg mt-3">Get Started</a>
+  <!-- Astronaut -->
+  <img src="https://pngimg.com/uploads/astronaut/astronaut_PNG9.png" class="astronaut" alt="Astronaut">
+  <!-- Fixed Rocket (Wikimedia Commons) -->
+  <img src="https://pngimg.com/uploads/astronaut/astronaut_PNG9.png" class="rocket" alt="Rocket">
+
+</div>
+
+
+<!-- Carousel -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1580424917963-3c25dbecff29?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="Rocket"></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="Space"></div>
+    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="Astronaut"></div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+</div>
+
+<!-- Services (Neutral Images) -->
+<div class="container my-5" id="services">
+  <h2 class="text-center mb-4">Our Services</h2>
+  <div class="row">
+    <div class="col-md-4"><div class="card shadow"><img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Consulting"><div class="card-body"><h5>Business Consulting</h5><p>Expert advice to help you grow your startup with confidence.</p></div></div></div>
+    <div class="col-md-4"><div class="card shadow"><img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Technology"><div class="card-body"><h5>Technology Solutions</h5><p>Building scalable digital platforms to power your ideas.</p></div></div></div>
+    <div class="col-md-4"><div class="card shadow"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Support"><div class="card-body"><h5>24/7 Support</h5><p>Dedicated support team to ensure smooth operations worldwide.</p></div></div></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>© 2025 Space Startup | All Rights Reserved</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

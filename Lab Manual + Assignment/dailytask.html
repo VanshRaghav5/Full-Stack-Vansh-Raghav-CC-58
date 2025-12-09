@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Task</title>
+    <style>
+        .task {
+            width: 100%;
+            position: relative;
+            height: 400px;
+            background: #ddd;
+            border: 2px solid #333;
+            margin: 20px auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background: rgb(255, 255, 255);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .box1 {
+            top: 50px;
+            left: 50px;
+            background: red;
+            z-index: 1;
+        }
+
+        .box2 {
+            top: 100px;
+            left: 100px;
+            background-color: royalblue;
+            z-index: 2;
+        }
+
+        .box3 {
+            top: 150px;
+            left: 150px;
+            background-color: rgb(155, 226, 13);
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="task">
+        <div class="box box1">
+            Box 1
+        </div>
+        <div class="box box2">
+            Box 2
+        </div>
+        <div class="box box3">
+            Box 3
+        </div>
+    </div>
+</body>
+
+</html>
